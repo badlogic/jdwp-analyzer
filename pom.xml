@@ -13,19 +13,19 @@
     <packaging>jar</packaging>
 
     <name>jdwp-analyzer</name>
-    <description>JDWP Analyzer</descriptor>
+    <description>JDWP Analyzer</description>
     <url>https://github.com/kherink/jdwp-analyzer/</url>
     <issueManagement>
         <url>https://github.com/kherink/jdwp-analyzer/issues</url>
     </issueManagement>
 
-    <license>
+    <licenses>
         <license>
             <name>Apache Licence 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0</url>
             <distribution>repo</distribution>
         </license>
-    </license>
+    </licenses>
 
     <developers>
         <developer>
