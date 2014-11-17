@@ -124,9 +124,11 @@ public class JDWPProxy {
     	if (logDir != null)
     		this.initLogWriter(logDir);
     	
-        ServerSocket serverSock = new ServerSocket(inPort);
-        System.out.println("JDWPProxy: waiting for connection on port " + inPort + "..");
-        socketDebugger = serverSock.accept();
+        try (ServerSocket serverSock = new ServerSocket(inPort)) {
+            serverSock.setReuseAddress(true);
+            System.out.println("JDWPProxy: waiting for connection on port " + inPort + "..");
+            socketDebugger = serverSock.accept();
+        }
         
         /* if the address contains a ':', the address has a host - otherwise it is considered to be just a port */
 		if (outAddress.indexOf(':') == -1 ) {
